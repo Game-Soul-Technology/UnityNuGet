@@ -20,7 +20,7 @@ namespace UnityNuGet
         {
             return !string.IsNullOrEmpty(_signingOptions.UpmServiceAccountKeyId)
                 && !string.IsNullOrEmpty(_signingOptions.UpmServiceAccountKeySecret)
-                && _signingOptions.UnityOrganizationId.HasValue
+                && !string.IsNullOrEmpty(_signingOptions.UnityOrganizationId)
                 && File.Exists(_signingOptions.UpmExecutableFilePath);
         }
 
@@ -34,7 +34,7 @@ namespace UnityNuGet
                     "pack",
                     packageDirectoryPath,
                     "--organization-id",
-                    _signingOptions.UnityOrganizationId!.Value.ToString(),
+                    _signingOptions.UnityOrganizationId!,
                     "--destination",
                     destinationDirectoryPath
                 }),

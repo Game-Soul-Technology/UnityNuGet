@@ -6,7 +6,7 @@
 
         public string? UpmServiceAccountKeySecret { get; set; }
 
-        public int? UnityOrganizationId { get; set; }
+        public string? UnityOrganizationId { get; set; }
 
         public string? UpmExecutableFilePath { get; set; }
     }
